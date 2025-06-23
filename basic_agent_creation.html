@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Agent Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a; /* Dark background */
+        margin: 0 auto;
+        padding: 40px;
+        font-family: sans-serif;
+        position: relative;
+        color: #f0f0f0; /* Light text for dark background */
+      }
+      .title {
+        color: #FFD700; /* Golden accent */
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .content-container {
+        display: flex;
+        flex-grow: 1;
+      }
+      .code-container {
+        flex: 1;
+        background-color: rgba(40, 40, 40, 0.8); /* Slightly lighter dark for cards */
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        overflow: auto;
+      }
+      .code-title {
+        color: #FFD700; /* Golden accent */
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .code-icon {
+        color: #FFD700; /* Golden accent */
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      .code-block {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        border-radius: 5px;
+        padding: 15px;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.4;
+        overflow: auto;
+        max-height: 500px;
+      }
+      .comment {
+        color: #7f8c8d;
+      }
+      .keyword {
+        color: #e74c3c;
+      }
+      .string {
+        color: #2ecc71;
+      }
+      .function {
+        color: #3498db;
+      }
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #f0f0f0;
+        font-size: 16px;
+      }
+      .logo-container {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="logo-container">
+        <img src="/home/ubuntu/upload/TheAlphaLogo.svg" alt="The Alpha Logo">
+      </div>
+      <div class="title">Basic Agent Creation</div>
+      
+      <div class="content-container">
+        <div class="code-container">
+          <div class="code-title">
+            <i class="fas fa-robot code-icon"></i>
+            Creating a Simple LangChain Agent
+          </div>
+          
+          <div class="code-block">
+            <span class="comment"># Import necessary libraries</span><br>
+            <span class="keyword">import</span> os<br>
+            <span class="keyword">from</span> langchain.agents <span class="keyword">import</span> AgentExecutor, create_react_agent<br>
+            <span class="keyword">from</span> langchain_core.prompts <span class="keyword">import</span> PromptTemplate<br>
+            <span class="keyword">from</span> langchain_openai <span class="keyword">import</span> OpenAI<br>
+            <span class="keyword">from</span> langchain_community.tools <span class="keyword">import</span> WikipediaQueryRun<br>
+            <span class="keyword">from</span> langchain_community.utilities <span class="keyword">import</span> WikipediaAPIWrapper<br>
+            <br>
+            <span class="comment"># Initialize the LLM</span><br>
+            llm = OpenAI(temperature=0)<br>
+            <br>
+            <span class="comment"># Initialize the Wikipedia tool</span><br>
+            wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())<br>
+            tools = [wikipedia]<br>
+            <br>
+            <span class="comment"># Define the prompt template for the agent</span><br>
+            prompt_template = PromptTemplate.<span class="function">from_template</span>(<span class="string">"""<br>
+            Answer the following questions as best you can. You have access to the following tools:<br>
+            <br>
+            {tools}<br>
+            <br>
+            Use the following format:<br>
+            <br>
+            Question: the input question you want to answer<br>
+            Thought: you should always think about what to do<br>
+            Action: the action to take, should be one of [{tool_names}]<br>
+            Action Input: the input to the action<br>
+            Observation: the result of the action<br>
+            ... (this Thought/Action/Action Input/Observation can repeat N times)<br>
+            Thought: I now know the final answer<br>
+            Final Answer: the final answer to the original input question<br>
+            <br>
+            Begin!<br>
+            <br>
+            Question: {input}<br>
+            Thought:{agent_scratchpad}<br>
+            """</span>)<br>
+            <br>
+            <span class="comment"># Create the agent</span><br>
+            agent = create_react_agent(llm, tools, prompt_template)<br>
+            <br>
+            <span class="comment"># Create the agent executor</span><br>
+            agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=<span class="keyword">True</span>)<br>
+            <br>
+            <span class="comment"># Run the agent</span><br>
+            <span class="function">print</span>(agent_executor.<span class="function">invoke</span>({<span class="string">"input"</span>: <span class="string">"What is the capital of France?"</span>}))<br>
+          </div>
+          
+          <p class="mt-4 text-gray-700">
+            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+            This example creates a simple agent that can use Wikipedia to answer questions. You can extend it by adding more tools and customizing the prompt.
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer">By Mr. Vishnu N C | Workshop: Understanding Multi-Agent Systems</div>
+    </div>
+  </body>
+</html>
+

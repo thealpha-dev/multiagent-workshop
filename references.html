@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a; /* Dark background */
+        margin: 0 auto;
+        padding: 40px;
+        font-family: sans-serif;
+        position: relative;
+        color: #f0f0f0; /* Light text for dark background */
+      }
+      .title {
+        color: #FFD700; /* Golden accent */
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .content-container {
+        display: flex;
+        flex-grow: 1;
+        gap: 30px;
+      }
+      .references-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .reference-section {
+        margin-bottom: 20px;
+      }
+      .section-title {
+        color: #FFD700; /* Golden accent */
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .section-icon {
+        color: #FFD700; /* Golden accent */
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      .reference-list {
+        list-style-type: none;
+        padding-left: 30px;
+      }
+      .reference-item {
+        margin-bottom: 8px;
+        font-size: 15px;
+        color: #f0f0f0;
+        display: flex;
+        align-items: flex-start;
+      }
+      .reference-bullet {
+        color: #FFD700; /* Golden accent */
+        margin-right: 8px;
+      }
+      .reference-link {
+        color: #FFD700;
+        text-decoration: none;
+      }
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #f0f0f0;
+        font-size: 16px;
+      }
+      .logo-container {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="logo-container">
+        <img src="/home/ubuntu/upload/TheAlphaLogo.svg" alt="The Alpha Logo">
+      </div>
+      <div class="title">References & Resources</div>
+      
+      <div class="content-container">
+        <div class="references-column">
+          <div class="reference-section">
+            <div class="section-title">
+              <i class="fas fa-book section-icon"></i>
+              Multi-Agent Systems Concepts
+            </div>
+            <ul class="reference-list">
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                IBM: <a href="https://www.ibm.com/think/topics/multiagent-system" class="reference-link">What is a Multiagent System?</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                Alan Turing Institute: <a href="https://www.turing.ac.uk/research/interest-groups/multi-agent-systems" class="reference-link">Multi-agent systems research</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                Wooldridge, M. (2009). <a href="#" class="reference-link">An Introduction to MultiAgent Systems</a>. John Wiley & Sons.
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                NVIDIA: <a href="https://www.nvidia.com/en-us/glossary/multi-agent-systems/" class="reference-link">Multi-Agent Systems Glossary</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="reference-section">
+            <div class="section-title">
+              <i class="fas fa-code section-icon"></i>
+              Frameworks Documentation
+            </div>
+            <ul class="reference-list">
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                LangChain: <a href="https://python.langchain.com/docs/introduction/" class="reference-link">Official Documentation</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                LangGraph: <a href="https://langchain-ai.github.io/langgraph/" class="reference-link">GitHub Documentation</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                AutoGen: <a href="https://microsoft.github.io/autogen/" class="reference-link">Microsoft AutoGen Documentation</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                CrewAI: <a href="https://docs.crewai.com/introduction" class="reference-link">Official Documentation</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                n8n: <a href="https://docs.n8n.io/" class="reference-link">Workflow Automation Docs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="references-column">
+          <div class="reference-section">
+            <div class="section-title">
+              <i class="fas fa-laptop-code section-icon"></i>
+              Tutorials & Examples
+            </div>
+            <ul class="reference-list">
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                LangChain: <a href="https://python.langchain.com/docs/tutorials/agents/" class="reference-link">Building an Agent Tutorial</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                AutoGen: <a href="https://microsoft.github.io/autogen/docs/Examples/" class="reference-link">Example Applications</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                CrewAI: <a href="https://docs.crewai.com/guides/crews/first-crew" class="reference-link">Build Your First Crew</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                LangGraph: <a href="https://langchain-ai.github.io/langgraph/concepts/multi_agent/" class="reference-link">Multi-Agent Systems Tutorial</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="reference-section">
+            <div class="section-title">
+              <i class="fas fa-graduation-cap section-icon"></i>
+              Advanced Learning Resources
+            </div>
+            <ul class="reference-list">
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                DeepLearning.AI: <a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" class="reference-link">Multi AI Agent Systems with crewAI</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                Manning Publications: <a href="https://www.manning.com/books/multi-agent-systems-with-autogen" class="reference-link">Multi-Agent Systems with AutoGen</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                GitHub: <a href="https://github.com/victordibia/multiagent-systems-with-autogen" class="reference-link">Building LLM-Enabled Multi Agent Applications</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                LangChain Academy: <a href="https://academy.langchain.com/courses/intro-to-langgraph" class="reference-link">Introduction to LangGraph</a>
+              </li>
+              <li class="reference-item">
+                <span class="reference-bullet">•</span>
+                Anthropic: <a href="https://www.anthropic.com/engineering/built-multi-agent-research-system" class="reference-link">How we built our multi-agent research system</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">By Mr. Vishnu N C | Workshop: Understanding Multi-Agent Systems</div>
+    </div>
+  </body>
+</html>
+

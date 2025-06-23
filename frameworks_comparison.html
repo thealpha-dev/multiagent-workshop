@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks Comparison</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a; /* Dark background */
+        margin: 0 auto;
+        padding: 40px;
+        font-family: sans-serif;
+        position: relative;
+        color: #f0f0f0; /* Light text for dark background */
+      }
+      .title {
+        color: #FFD700; /* Golden accent */
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: rgba(40, 40, 40, 0.8); /* Slightly lighter dark for table background */
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .comparison-table th {
+        background-color: #333; /* Darker header for table */
+        color: #FFD700; /* Golden accent for header text */
+        text-align: left;
+        padding: 12px 15px;
+        font-size: 18px;
+      }
+      .comparison-table td {
+        padding: 10px 15px;
+        border-bottom: 1px solid #444; /* Darker border for rows */
+        font-size: 16px;
+      }
+      .comparison-table tr:last-child td {
+        border-bottom: none;
+      }
+      .comparison-table tr:nth-child(even) {
+        background-color: rgba(50, 50, 50, 0.5); /* Alternate row background */
+      }
+      .highlight {
+        color: #FFD700; /* Golden accent */
+        font-weight: bold;
+      }
+      .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #f0f0f0;
+        font-size: 16px;
+      }
+      .logo-container {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="logo-container">
+        <img src="/home/ubuntu/upload/TheAlphaLogo.svg" alt="The Alpha Logo">
+      </div>
+      <div class="title">Frameworks Comparison</div>
+      
+      <div class="content-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Framework</th>
+              <th>Key Strengths</th>
+              <th>Best For</th>
+              <th>Limitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="highlight">LangChain</span></td>
+              <td>Comprehensive tooling, extensive integrations, mature ecosystem</td>
+              <td>General LLM applications, rapid prototyping</td>
+              <td>Can be complex for beginners, less specialized for multi-agent systems</td>
+            </tr>
+            <tr>
+              <td><span class="highlight">LangGraph</span></td>
+              <td>Graph-based orchestration, fine-grained control, stateful workflows</td>
+              <td>Complex workflows, advanced agent coordination</td>
+              <td>Steeper learning curve, requires understanding of graph concepts</td>
+            </tr>
+            <tr>
+              <td><span class="highlight">AutoGen</span></td>
+              <td>Conversation-driven collaboration, human-in-the-loop support</td>
+              <td>Dynamic multi-agent conversations, interactive systems</td>
+              <td>Less flexible for non-conversational workflows</td>
+            </tr>
+            <tr>
+              <td><span class="highlight">CrewAI</span></td>
+              <td>Role-based collaboration, lightweight, independent architecture</td>
+              <td>Structured team workflows, role-specific tasks</td>
+              <td>Newer framework with smaller community and fewer integrations</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="image-container">
+          <img src="/home/ubuntu/upload/search_images/j7u2POxauOHS.png" alt="Technical Comparison" style="width: 650px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+      
+      <div class="footer">By Mr. Vishnu N C | Workshop: Understanding Multi-Agent Systems</div>
+    </div>
+  </body>
+</html>
+

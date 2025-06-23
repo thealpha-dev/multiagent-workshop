@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Use Cases</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a; /* Dark background */
+        margin: 0 auto;
+        padding: 40px;
+        font-family: sans-serif;
+        position: relative;
+        color: #f0f0f0; /* Light text for dark background */
+      }
+      .title {
+        color: #FFD700; /* Golden accent */
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .content-container {
+        display: flex;
+        flex-grow: 1;
+        gap: 30px;
+      }
+      .use-cases {
+        flex: 1;
+      }
+      .use-case-item {
+        background-color: rgba(40, 40, 40, 0.8); /* Slightly lighter dark for cards */
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .use-case-title {
+        color: #FFD700; /* Golden accent */
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+      }
+      .use-case-icon {
+        color: #FFD700; /* Golden accent */
+        margin-right: 10px;
+        font-size: 20px;
+      }
+      .use-case-description {
+        font-size: 16px;
+        color: #f0f0f0;
+      }
+      .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #f0f0f0;
+        font-size: 16px;
+      }
+      .logo-container {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="logo-container">
+        <img src="/home/ubuntu/upload/TheAlphaLogo.svg" alt="The Alpha Logo">
+      </div>
+      <div class="title">Business Use Cases</div>
+      
+      <div class="content-container">
+        <div class="use-cases">
+          <div class="use-case-item">
+            <div class="use-case-title">
+              <i class="fas fa-chart-line use-case-icon"></i>
+              Revenue Operations
+            </div>
+            <p class="use-case-description">
+              Optimize sales processes, lead nurturing, and customer relationship management through automated tasks, data analysis, and personalized interactions.
+            </p>
+          </div>
+          
+          <div class="use-case-item">
+            <div class="use-case-title">
+              <i class="fas fa-headset use-case-icon"></i>
+              Customer Support
+            </div>
+            <p class="use-case-description">
+              Enhance customer service with multi-layered support where initial inquiries are handled by general agents and complex issues are escalated to specialized agents.
+            </p>
+          </div>
+          
+          <div class="use-case-item">
+            <div class="use-case-title">
+              <i class="fas fa-truck use-case-icon"></i>
+              Supply Chain Management
+            </div>
+            <p class="use-case-description">
+              Optimize logistics, inventory management, and demand forecasting by coordinating various agents representing different parts of the supply chain.
+            </p>
+          </div>
+          
+          <div class="use-case-item">
+            <div class="use-case-title">
+              <i class="fas fa-chess use-case-icon"></i>
+              Strategic Planning
+            </div>
+            <p class="use-case-description">
+              Assist in strategic decision-making by simulating different scenarios, analyzing market trends, and providing insights for business growth.
+            </p>
+          </div>
+        </div>
+        
+        <div class="image-container">
+          <img src="/home/ubuntu/upload/search_images/SfAeSJTPYF43.png" alt="Business Use Cases" style="width: 500px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+      
+      <div class="footer">By Mr. Vishnu N C | Workshop: Understanding Multi-Agent Systems</div>
+    </div>
+  </body>
+</html>
+

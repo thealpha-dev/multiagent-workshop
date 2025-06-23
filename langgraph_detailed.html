@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangGraph Detailed</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #1a1a1a; /* Dark background */
+        margin: 0 auto;
+        padding: 40px;
+        font-family: sans-serif;
+        position: relative;
+        color: #f0f0f0; /* Light text for dark background */
+      }
+      .title {
+        color: #FFD700; /* Golden accent */
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .content-container {
+        display: flex;
+        flex-grow: 1;
+        gap: 20px;
+      }
+      .left-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .right-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .architecture-container {
+        background-color: rgba(40, 40, 40, 0.8); /* Slightly lighter dark for cards */
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .architecture-title {
+        color: #FFD700; /* Golden accent */
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+      }
+      .architecture-icon {
+        color: #FFD700; /* Golden accent */
+        margin-right: 8px;
+        font-size: 18px;
+      }
+      .components-container {
+        background-color: rgba(40, 40, 40, 0.8); /* Slightly lighter dark for cards */
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .component-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .component-item {
+        display: flex;
+        align-items: flex-start;
+      }
+      .component-icon {
+        color: #FFD700; /* Golden accent */
+        margin-right: 6px;
+        font-size: 14px;
+        margin-top: 2px;
+      }
+      .component-text {
+        font-size: 14px;
+        color: #f0f0f0;
+      }
+      .use-case-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .use-case-item {
+        display: flex;
+        align-items: flex-start;
+      }
+      .use-case-icon {
+        color: #FFD700; /* Golden accent */
+        margin-right: 6px;
+        font-size: 14px;
+        margin-top: 2px;
+      }
+      .use-case-text {
+        font-size: 14px;
+        color: #f0f0f0;
+      }
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #f0f0f0;
+        font-size: 16px;
+      }
+      .logo-container {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="logo-container">
+        <img src="/home/ubuntu/upload/TheAlphaLogo.svg" alt="The Alpha Logo">
+      </div>
+      <div class="title">LangGraph: Stateful Workflow Architecture</div>
+      
+      <div class="content-container">
+        <div class="left-column">
+          <div class="architecture-container">
+            <div class="architecture-title">
+              <i class="fas fa-project-diagram architecture-icon"></i>
+              Core Architecture
+            </div>
+            <img src="/home/ubuntu/upload/search_images/VP9nHxnjduAj.png" alt="LangGraph Architecture" style="width: 100%; height: auto; border-radius: 5px;">
+          </div>
+          
+          <div class="components-container">
+            <div class="architecture-title">
+              <i class="fas fa-puzzle-piece architecture-icon"></i>
+              Key Components
+            </div>
+            
+            <div class="component-grid">
+              <div class="component-item">
+                <i class="fas fa-database component-icon"></i>
+                <div class="component-text"><strong>State</strong>: Context</div>
+              </div>
+              
+              <div class="component-item">
+                <i class="fas fa-code-branch component-icon"></i>
+                <div class="component-text"><strong>Nodes</strong>: Processing</div>
+              </div>
+              
+              <div class="component-item">
+                <i class="fas fa-link component-icon"></i>
+                <div class="component-text"><strong>Edges</strong>: Flow</div>
+              </div>
+              
+              <div class="component-item">
+                <i class="fas fa-route component-icon"></i>
+                <div class="component-text"><strong>Routing</strong>: Paths</div>
+              </div>
+              
+              <div class="component-item">
+                <i class="fas fa-sync-alt component-icon"></i>
+                <div class="component-text"><strong>Cycles</strong>: Loops</div>
+              </div>
+              
+              <div class="component-item">
+                <i class="fas fa-save component-icon"></i>
+                <div class="component-text"><strong>Persistence</strong></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="components-container">
+            <div class="architecture-title">
+              <i class="fas fa-lightbulb architecture-icon"></i>
+              Use Cases
+            </div>
+            
+            <div class="use-case-grid">
+              <div class="use-case-item">
+                <i class="fas fa-comments use-case-icon"></i>
+                <div class="use-case-text"><strong>Conversational Agents</strong></div>
+              </div>
+              
+              <div class="use-case-item">
+                <i class="fas fa-users-cog use-case-icon"></i>
+                <div class="use-case-text"><strong>Multi-Agent Systems</strong></div>
+              </div>
+              
+              <div class="use-case-item">
+                <i class="fas fa-tasks use-case-icon"></i>
+                <div class="use-case-text"><strong>Task Automation</strong></div>
+              </div>
+              
+              <div class="use-case-item">
+                <i class="fas fa-user-check use-case-icon"></i>
+                <div class="use-case-text"><strong>Human-in-the-Loop</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="right-column">
+          <div class="architecture-container">
+            <div class="architecture-title">
+              <i class="fas fa-sitemap architecture-icon"></i>
+              Workflow Example
+            </div>
+            <img src="/home/ubuntu/upload/search_images/ZO1aIwBp7Cft.jpeg" alt="LangGraph Workflow Example" style="width: 100%; height: auto; border-radius: 5px;">
+          </div>
+          
+          <div class="components-container">
+            <div class="architecture-title">
+              <i class="fas fa-exchange-alt architecture-icon"></i>
+              LangGraph vs. LangChain
+            </div>
+            
+            <table class="min-w-full text-sm">
+              <thead>
+                <tr>
+                  <th class="text-left py-1 text-gray-700">Feature</th>
+                  <th class="text-left py-1 text-gray-700">LangChain</th>
+                  <th class="text-left py-1 text-gray-700">LangGraph</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-1">Focus</td>
+                  <td class="py-1">Components</td>
+                  <td class="py-1">Workflows</td>
+                </tr>
+                <tr>
+                  <td class="py-1">State</td>
+                  <td class="py-1">Basic</td>
+                  <td class="py-1">Advanced</td>
+                </tr>
+                <tr>
+                  <td class="py-1">Flow</td>
+                  <td class="py-1">Sequential</td>
+                  <td class="py-1">Graph-based</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="architecture-container">
+            <div class="architecture-title">
+              <i class="fas fa-code architecture-icon"></i>
+              Implementation Example
+            </div>
+            <pre class="bg-gray-800 text-gray-100 rounded p-2 text-xs overflow-auto" style="max-height: 140px;">
+from typing import TypedDict
+from langgraph.graph import StateGraph, END
+
+# Define state
+class AgentState(TypedDict):
+    messages: list
+    next_step: str
+
+# Define nodes
+def agent(state):
+    return {"messages": [...], "next_step": "decide"}
+
+def decide(state):
+    if "FINAL" in state["messages"][-1]:
+        return "end"
+    return "agent"
+
+# Create graph
+workflow = StateGraph(AgentState)
+workflow.add_node("agent", agent)
+workflow.add_conditional_edges(
+    "decide", decide, {"agent": "agent", "end": END}
+)
+            </pre>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">By Mr. Vishnu N C | Workshop: Understanding Multi-Agent Systems</div>
+    </div>
+  </body>
+</html>
+
