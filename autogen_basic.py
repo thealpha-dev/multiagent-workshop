@@ -4,7 +4,7 @@ import autogen
 config_list = [
     {
         "model": "OpenAI.gpt-4.1-mini",
-        "api_key": "sk-0ca52251e80a4324b67b9834cc468de7",
+        "api_key": "api-key",
         "base_url": "https://thealpha.dev/api"
     }
 ]

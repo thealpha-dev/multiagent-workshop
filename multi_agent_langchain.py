@@ -11,7 +11,7 @@ class AgentState(TypedDict):
 
 # Initialize the LLM
 llm = ChatOpenAI(
-    openai_api_key="sk-0ca52251e80a4324b67b9834cc468de7",
+    openai_api_key="api-key",
     openai_api_base="https://thealpha.dev/api",
     model_name="thealphadev",
     temperature=0)

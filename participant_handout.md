@@ -80,6 +80,12 @@ source venv_mas/bin/activate
 
 # Install required packages
 pip install langchain langchain_openai wikipedia
+
+pip install crewai
+
+pip install 'crewai[tools]'
+
+pip install autogen
 ```
 
 ### Basic Agent Creation
